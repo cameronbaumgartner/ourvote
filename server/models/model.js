@@ -2,11 +2,15 @@ const { Pool } = require('pg');
 
 let connectionString = '';
 if (process.env.NODE_ENV === 'test') {
+  console.log('Using test database');
   // make .env available to this file when not using node start script
   require('dotenv').config();
   connectionString = process.env.TEST_DB;
 }
-else connectionString = process.env.DB_URI;
+else {
+  console.log('Using production database');
+  connectionString = process.env.DB_URI;
+}
 
 const pool = new Pool({
   connectionString,
