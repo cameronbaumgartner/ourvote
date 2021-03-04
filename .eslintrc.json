@@ -1,5 +1,4 @@
 {
-  "parser": "@typescript-eslint/parser",
   "root": true,
   "ignorePatterns": [
     "**/test",
@@ -11,12 +10,13 @@
     "es2021": true
   },
   "plugins": [
-    "react"
+    "react",
+    "prettier"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "sourceType": "module",
@@ -37,16 +37,14 @@
     ],
     "no-case-declarations": "off",
     "prefer-const": "warn",
-    "quotes": [
-      "warn",
-      "single"
-    ],
+    "quotes": "off",
     "react/prop-types": "off",
     "semi": [
       "warn",
       "always"
     ],
-    "space-infix-ops": "warn"
+    "space-infix-ops": "warn",
+    "prettier/prettier": "warn"
   },
   "settings": {
     "react": {
