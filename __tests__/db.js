@@ -16,6 +16,7 @@ describe('Database unit tests', () => {
     else console.log(`Running unit tests on database in ${process.env.NODE_ENV} environment.`);
 
     // TODO: use async/await to ensure this executes
+    // clear politicians table in test db
     db.query('TRUNCATE politicians RESTART IDENTITY CASCADE', (error, response) => {
       if (error) console.log('Problem truncating test db:', error);
       console.log('Truncated mock db');
@@ -43,7 +44,7 @@ describe('Database unit tests', () => {
     AND table_type='BASE TABLE';`;
 
     db.query(query, (error, response) => {
-      if (error) console.log('Problem truncating test db:', error);
+      if (error) console.log('Problem selecting test db\'s tables:', error);
 
       expect(response.rows).toHaveLength(9);
       expect(response.rows).toEqual(['users', 'prev_registrations', 'elections', 'roles', 'donors', 'politicians', 'pols_roles', 'donations', 'candidates']);
