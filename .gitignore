@@ -3,3 +3,7 @@
 build/
 client/components/social-config.js
 draft.sql
+.vscode
+./jest-setup.js
+./jest-teardown.js
+./package-lock.json

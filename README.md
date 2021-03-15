@@ -1,2 +1,2 @@
 # ourvote
-Civic information aggregator to encourage voter engagem
+Civic information aggregator to encourage voter engagement.

@@ -24,7 +24,6 @@ const arrayToSqlList = (array) => {
   return "(" + values.slice(0, -2) + ")";
 };
 
-// TODO: refactor assembleSQL to use arrayToSqlList
 // Given the output of a query to the Google Civic Info API, deconstruct off of it the array of political offices and array of political officials. Produce a SQL prepared statement containing the relevant values from each to insert into the politicans table.
 const assembleSql = (obj) => {
   const { offices, officials } = obj;
@@ -72,7 +71,6 @@ searchController.getAll = (req, res, next) => {
 };
 
 // If record already exists, don't update or duplicate it; do nothing.
-// TODO: Decide which fields (all?) we might want to update for records that already exist.
 searchController.upsertByAddress = (req, res, next) => {
   const { address } = req.query;
   console.log(`Upserting by address: ${address}`);
@@ -96,8 +94,8 @@ searchController.upsertByAddress = (req, res, next) => {
       res.locals.names = names;
 
       const polsInfo = assembleSql(data);
-      console.log('data from API query', polsInfo);
-      // inserting with ON CONFLICT clause to prevent duplicate records
+      console.log("data from API query", polsInfo);
+
       const query =
         `INSERT INTO politicians (
         office,
