@@ -1,7 +1,9 @@
-<center>
-  <img src="client/assets/ourvote.png" alt="logo"/>
-  <p>Civic information aggregator to encourage voter engagement.</p>
-</center>
+<header>
+   <p align="center">
+    <img src="client/assets/ourvote.png" alt="logo"/>
+    <br />Civic information aggregator to encourage voter engagement.
+  </p>
+</header>
 
 <main style="margin-top:30px">
   <h1>About</h1>
@@ -16,4 +18,6 @@
 </main>
 
 <h1 style="margin-top:30px">Preview</h1>
-<img src="client/assets/ourvote-screengrab.gif" alt="screen recording" />
+ <p align="center">
+  <img src="client/assets/ourvote-screengrab.gif" alt="screen recording" />
+ </p>
